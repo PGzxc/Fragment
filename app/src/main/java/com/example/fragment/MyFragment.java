@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * 作者：Admin 创建日期：2017/11/1518:57
+ * @author Admin
+ * 创建日期：2017/11/1518:57
  * 编程使我快乐
  */
 

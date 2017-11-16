@@ -13,16 +13,21 @@ import java.util.Stack;
 /**
  * 作者：Admin 创建日期：2017/11/1518:36
  * 编程使我快乐
+ * @author: orange
  */
 
 public class FragmentActivity2 extends AppCompatActivity  implements View.OnClickListener{
-    private Button add;    // 添加Fragment
-    private Button remove; // 移除Fragment
+    private Button add;
+    private Button remove;
 
-    // Fragment管理器
+    /**
+     *  Fragment管理器
+     */
     private FragmentManager manager;
 
-    // 使用一个栈记录所有添加的Fragment
+    /**
+     * 使用一个栈记录所有添加的Fragment
+     */
     private Stack<Fragment> fragmentStack = new Stack<>();
 
     @SuppressLint("NewApi") @Override
@@ -65,11 +70,15 @@ public class FragmentActivity2 extends AppCompatActivity  implements View.OnClic
                 transaction = manager.beginTransaction();
                 // 使用add方法添加Fragment，第一个参数是要把Fragment添加到的布局Id
                 // 第二个就是要添加的Fragment
-                if(!this.fragmentStack.empty())
+                if(!this.fragmentStack.empty()){
                     transaction.remove((this.fragmentStack.pop()));
-                // 提交事务，否则添加就没成功
-                transaction.commit();
+                    // 提交事务，否则添加就没成功
+                    transaction.commit();
+                }
                 break;
+            default:
+            break;
         }
+
     }
 }
